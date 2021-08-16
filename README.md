@@ -1,1 +1,10 @@
-# mediaaccount-py
+# MediaAccount Python Client
+
+## Usage
+
+```python
+# TODO
+```
+
+## Development
+
