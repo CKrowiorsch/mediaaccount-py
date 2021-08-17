@@ -10,7 +10,7 @@ mediaAccount = MediaAccountClient(key=apiKey)
 
 # raw client
 (articles, nextPageLink, count) = mediaAccount.articles('ImportDatum', von=datetime(2021,1,1), bis=datetime(2021,2,1), maxItems=10)
-mediaAccount.articleNext(nextPageLink)
+(articles, nextPageLink, count) = mediaAccount.articleNext(nextPageLink)
 
 ```
 
@@ -19,4 +19,5 @@ mediaAccount.articleNext(nextPageLink)
 ### TODO
 
 * Iterator
-* V3 API
+* Highlevel API #3
+* V3 API #4
