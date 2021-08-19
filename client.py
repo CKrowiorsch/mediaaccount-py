@@ -45,9 +45,12 @@ class MediaAccountClient(object):
         return (articles, nextPageLink, count)
     
     def scroll(self, typ, von = None, bis = None, maxItems : int = 150):
-        return MediaAccountClientScroll(self, typ, von, bis, maxItems)
+        return ArticleScroll(self, typ, von, bis, maxItems)
 
-class MediaAccountClientScroll:
+class ArticleScroll:
+    """
+        Iterator für alle Artikel
+    """
     state : Literal['initialized', 'running']
     totalCount  : int
     currentQueue : deque
