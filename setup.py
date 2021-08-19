@@ -3,17 +3,18 @@
 import sys
 from setuptools import setup
 
-
 REQUIREMENTS = []
 
 with open('README.md') as README:
     LONG_DESCRIPTION = README.read()
 
 setup(
-    name='mediaaccount',
+    name='mediaccount-py',
+    packages = ['mediaccount-py'],
     version='2.0.0',
-    url='https://github.com/ckrowiorsch/mediaaccount.py',
+    url='https://github.com/ckrowiorsch/mediaaccount-py',
     license='MIT',
+    keywords = ['mediaaccount', 'landaumedia'],
     author='Christian Krowiorsch',
     author_email='christian.krowiorsch@googlemail.com',
     description="Python client for the MediaAccount API",
@@ -27,16 +28,4 @@ setup(
         "Topic :: Software Development :: Libraries",
     ],
     install_requires=REQUIREMENTS,
-    tests_require=REQUIREMENTS+[
-        "requests",
-        "dataclasses-json"
-    ],
-    py_modules=['mediaaccount'],
-    include_package_data=False,
-    entry_points={
-        'console_scripts': [
-            'diffbot = diffbot:cli',
-        ],
-    },
-    zip_safe=True,
 )
