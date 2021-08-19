@@ -1,6 +1,5 @@
-from sys import setprofile
 import requests
-from models import Article
+from mediaaccount.models import Article
 from collections import deque
 from typing import List, Literal, Optional, Union
 
