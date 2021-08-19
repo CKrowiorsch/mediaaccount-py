@@ -30,7 +30,7 @@ class Article:
     anzeigenaequivalenzwert: Optional[float]
     gewichteterAnzeigenaequivalenzwert: Optional[float]
     isHaupttreffer: bool
-    haupttrefferId: int
+    haupttrefferId: Optional[int]
     isDigitized: bool
     lieferdatum: str
     importdatum: str
