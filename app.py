@@ -1,4 +1,4 @@
-from client import MediaAccountClient
+from mediaaccount import MediaAccountClient
 import sys,getopt
         
 def main(argv):
