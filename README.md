@@ -16,6 +16,15 @@ mediaAccount = MediaAccountClient(key=apiKey)
 
 ## Development
 
+### Build
+```bash
+    python -m build
+
+    python -m twine upload --repository testpypi dist/*
+
+
+```
+
 ### TODO
 
 * Iterator
