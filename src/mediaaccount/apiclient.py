@@ -1,7 +1,8 @@
 import requests
-from mediaaccount.models import Article
 from collections import deque
 from typing import List, Literal, Optional, Union
+
+from .models import Article
 
 class MediaAccountClient(object):
     """
