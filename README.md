@@ -2,7 +2,13 @@
 
 Documentation for the api hier: <http://api.media-account.de/>
 
+Package found here: <https://pypi.org/project/mediaaccount/>
+
 ## Usage
+
+The client supports the python logging-package for detailed information.
+
+### Request articles
 
 ```python
 import datetime
@@ -21,12 +27,18 @@ articlesAll = [i[0] for i in scroll]
 
 ## Development
 
-### Build
+### Publish
+
 ```bash
-    python -m build
-    python -m twine upload --repository testpypi dist/*
+    ./publish.sh test     # publish to test
+```
+
+```bash
+    ./publish.sh prod     # publish to prod
 ```
 
 ### Roadmap
+
+Board: <https://github.com/CKrowiorsch/mediaaccount-py/projects/1>
 
 * Integration Api-V3

@@ -1,6 +1,15 @@
 from mediaaccount import MediaAccountClient
 import sys,getopt
+import logging
         
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
 def main(argv):
     verbose = False
     apiKey = None

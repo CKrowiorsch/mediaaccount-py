@@ -1,6 +1,9 @@
 import requests
 from collections import deque
 from typing import List, Literal, Optional, Union
+import logging
+
+logger = logging.getLogger("mediaaccount")
 
 from .models import Article
 
@@ -27,13 +30,18 @@ class MediaAccountClient(object):
         response = requests.get(f'{self.base_url}v2/articles', headers = headers, params = params)
         response.raise_for_status()
         
-        return self._readResponse(response)
+        result = self._readResponse(response)
+        logger.info(f'Request API successful - total: {result[2]:,} Articles')
+        return result
 
     def articlesUrl(self, url):
         headers = {'api_key' : self.api_key}
         response = requests.get(url, headers = headers)
         response.raise_for_status()
-        return self._readResponse(response)
+
+        result = self._readResponse(response)
+        logger.info(f'Request API successful - total: {result[2]:,} Articles')
+        return result
 
     def _readResponse(self, response):
         """"lesen der Daten aus der ApiResponse"""
@@ -68,6 +76,7 @@ class ArticleScroll:
         self.maxItems = maxItems
 
     def __iter__(self):
+        logging.debug("Start Interator for Articles")
         self.state = 'initialized'
         self.nextLink = None
         self.currentQueue = deque()
