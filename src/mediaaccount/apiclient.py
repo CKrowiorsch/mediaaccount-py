@@ -31,7 +31,7 @@ class MediaAccountClient(object):
         response.raise_for_status()
         
         result = self._readResponse(response)
-        logger.info(f'Request API successful - total: {result[2]:,} Articles')
+        logger.info(f'Request MediaAccount-API successful - {len(result[0]):,} Articles - total: {result[2]:,} Articles')
         return result
 
     def articlesUrl(self, url):
@@ -40,7 +40,7 @@ class MediaAccountClient(object):
         response.raise_for_status()
 
         result = self._readResponse(response)
-        logger.info(f'Request API successful - total: {result[2]:,} Articles')
+        logger.info(f'Request MediaAccount-API successful - {len(result[0]):,} Articles - total: {result[2]:,} Articles')
         return result
 
     def _readResponse(self, response):

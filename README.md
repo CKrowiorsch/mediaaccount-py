@@ -12,13 +12,14 @@ The client supports the python logging-package for detailed information.
 
 ```python
 import datetime
+from mediaaccount import MediaAccountClient
 
 apiKey = '123456789'
 mediaAccount = MediaAccountClient(key=apiKey)
 
 # raw client
-(articles, nextPageLink, count) = mediaAccount.articles('ImportDatum', von=datetime(2021,1,1), bis=datetime(2021,2,1), maxItems=10)
-(articles, nextPageLink, count) = mediaAccount.articleNext(nextPageLink)
+articles, nextlink, count = client.articles('ImportDatum', von = '01.05.2021', bis = '05.08.2021', maxItems=150)
+articles, nextPageLink, count = mediaAccount.articleNext(nextPageLink)
 
 # full request
 scroll = client.scroll('ImportDatum', von = '04.08.2021', bis = '05.08.2021', maxItems=1000)
