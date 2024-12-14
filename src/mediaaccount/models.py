@@ -89,7 +89,7 @@ class Publikation:
     publikationsname: str
     tvSenderName: Optional[str]
     publikations_land: str
-    publizistische_einheit: Optional[int]
+    publizistische_einheit: Optional[str]
     reichweite: int
     bundesland: str
     werbepreis_pro_sekunde: Optional[float]
