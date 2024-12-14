@@ -61,6 +61,7 @@ jobs:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
         with:
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           name: release-dists
           path: dist/
 
