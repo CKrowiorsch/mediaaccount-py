@@ -15,11 +15,11 @@ import datetime
 from mediaaccount import MediaAccountClient
 
 apiKey = '123456789'
-mediaAccount = MediaAccountClient(key=apiKey)
+client = MediaAccountClient(api_key=apiKey)
 
 # raw client
 articles, nextlink, count = client.articles('ImportDatum', von = '01.05.2021', bis = '05.08.2021', maxItems=150)
-articles, nextPageLink, count = mediaAccount.articleNext(nextPageLink)
+articles, nextPageLink, count = client.articleNext(nextPageLink)
 
 # full request
 scroll = client.scroll('ImportDatum', von = '04.08.2021', bis = '05.08.2021', maxItems=1000)
