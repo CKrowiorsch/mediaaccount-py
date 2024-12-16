@@ -42,6 +42,7 @@ class Article:
     sprache: str
     herkunftsland: str
     tonalitaet: str
+    labels: List[str]
     auftrag: 'Auftrag'
     publikation: 'Publikation'
     inhalt: Optional['Inhalt'] = None
@@ -55,7 +56,7 @@ class Article:
     engagement: Optional['Engagement'] = None
     sendungs_beginn: Optional[str]= None
     beitragsstart: Optional[str]= None
-    labels: List[str]
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE, letter_case=LetterCase.PASCAL)
 @dataclass
